@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.yjh.pojo.Article" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
     <result column="category" property="category" jdbcType="VARCHAR" />
     <result column="sort" property="sort" jdbcType="VARCHAR" />
     <result column="detail" property="detail" jdbcType="VARCHAR" />

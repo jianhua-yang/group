@@ -53,9 +53,9 @@ layui.use(['laydate', 'jquery', 'admin'], function() {
 
 	/*用户-删除*/
 	window.member_del = function (obj, id) {
+		console.log(obj.url);
 		layer.confirm('确认要删除吗？', function(index) {
 			//发异步删除数据
-			$(obj).parents("tr").remove();
 			layer.msg('已删除!', {
 				icon: 1,
 				time: 1000

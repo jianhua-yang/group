@@ -11,11 +11,24 @@
  Target Server Version : 80018
  File Encoding         : 65001
 
- Date: 12/07/2020 14:36:49
+ Date: 12/07/2020 18:45:59
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for tb_admin
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_admin`;
+CREATE TABLE `tb_admin`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `status` int(255) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for tb_article
@@ -24,7 +37,7 @@ DROP TABLE IF EXISTS `tb_article`;
 CREATE TABLE `tb_article`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `date` datetime(0) NULL,
+  `date` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sort` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `detail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -35,6 +48,7 @@ CREATE TABLE `tb_article`  (
 -- Records of tb_article
 -- ----------------------------
 INSERT INTO `tb_article` VALUES (1, '123', '2020-06-30 23:32:50', '254', '534', '635');
+INSERT INTO `tb_article` VALUES (2, 'qwer', '2020-07-12', 'qwert', 'eq', 'qe');
 
 -- ----------------------------
 -- Table structure for tb_member

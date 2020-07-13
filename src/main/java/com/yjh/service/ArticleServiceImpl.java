@@ -15,4 +15,14 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getAll() {
         return articleMapper.selectAll();
     }
+
+    @Override
+    public void add(Article article) {
+        articleMapper.insert(article);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        articleMapper.deleteByPrimaryKey(id);
+    }
 }

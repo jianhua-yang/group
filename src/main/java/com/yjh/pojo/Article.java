@@ -1,5 +1,4 @@
 package com.yjh.pojo;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,7 +7,7 @@ public class Article implements Serializable {
 
     private String title;
 
-    private Date date;
+    private String data;
 
     private String category;
 
@@ -34,12 +33,12 @@ public class Article implements Serializable {
         this.title = title == null ? null : title.trim();
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        return data;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String date) {
+        this.data = date;
     }
 
     public String getCategory() {
@@ -64,5 +63,17 @@ public class Article implements Serializable {
 
     public void setDetail(String detail) {
         this.detail = detail == null ? null : detail.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", date=" + data +
+                ", category='" + category + '\'' +
+                ", sort='" + sort + '\'' +
+                ", detail='" + detail + '\'' +
+                '}';
     }
 }

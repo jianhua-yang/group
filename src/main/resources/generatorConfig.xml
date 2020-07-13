@@ -19,8 +19,11 @@
 
         <!--数据库的连接-->
         <jdbcConnection driverClass="${driverClassName}"
-                        connectionURL="${jdbc_url}" userId="${jdbc_username}"
-                        password="${jdbc_password}"/>
+                        connectionURL="${jdbc_url}"
+                        userId="${jdbc_username}"
+                        password="${jdbc_password}">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
 
         <!--指定生成的类型为java类型，避免数据库中number等类型字段 false时解析成Integer  true时解析成BigDecimal -->
         <javaTypeResolver>
@@ -57,7 +60,7 @@
         <!--enableDeleteByExample="false" enableSelectByExample="false"-->
         <!--selectByExampleQueryId="false">-->
         <!--</table>-->
-        <table tableName="tb_member" domainObjectName="Member"
+        <table tableName="tb_admin" domainObjectName="Admin"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

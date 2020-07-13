@@ -17,7 +17,7 @@ public class Member implements Serializable {
 
     private String address;
 
-    private Integer status;
+    private String status;
 
     private static final long serialVersionUID = 1L;
 
@@ -77,11 +77,11 @@ public class Member implements Serializable {
         this.address = address == null ? null : address.trim();
     }
 
-    public Integer getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

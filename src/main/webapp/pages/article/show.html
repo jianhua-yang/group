@@ -6,5 +6,13 @@
 </head>
 <body>
 啥也不是
+<script>
+    layui.use(['layer'], function(){
+        var layer=layui.layer;
+        var router = layui.router();
+        layer.alert(router.search.id);//弹出提示 “1”
+    });
+</script>
+
 </body>
 </html>

@@ -23,7 +23,7 @@ layui.use(['table', 'jquery','form', 'admin'], function() {
 			}, {
 				field: 'category',title: '分类',sort: true
 			}, {
-				field: 'sort',title: '排序',sort: true
+				field: 'sort',title: '细节',sort: true
 			}, {
 				field: 'recommend',title: '推荐',templet: '#recommendTpl',unresize: true
 			}, {
@@ -96,12 +96,26 @@ layui.use(['table', 'jquery','form', 'admin'], function() {
 	/*用户-删除*/
 	window.member_del = function(obj, id) {
 		layer.confirm('确认要删除吗？', function(index) {
-			//发异步删除数据
-			$(obj).parents("tr").remove();
-			layer.msg('已删除!', {
-				icon: 1,
-				time: 1000
-			});
+            console.log(id);
+            $.ajax({
+                url: "/article/delete",
+                data: "id=" + id,
+                type:"post",
+                dataType: "text",
+                success: function (data) {
+                    if (data == "success") {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {icon: 1, time: 1000});
+                    } else {
+                        layer.msg(data, {icon: 5, time: 1000});
+                    }
+                }
+
+            }),
+            layer.msg('已删除!', {
+                icon: 1,
+                time: 1000
+            });
 		});
 	}
 

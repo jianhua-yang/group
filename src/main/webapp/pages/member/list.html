@@ -103,57 +103,22 @@
 		</form>
 		<!--/列表页增加form表单，接收add页面传过来的值，模拟后台提交与接收-->
 		<script type="text/html" id="operateTpl">
-			<a title="编辑" onclick="WeAdminEdit('编辑','./edit.html', 2, 600, 400)" href="javascript:;">
+			<a title="编辑" onclick="WeAdminEdit('编辑','./edit.html', '{{d.id}}', 600, 400)" href="javascript:;">
 				<i class="layui-icon">&#xe642;</i>
 			</a>
 			<a title="查看" onclick="WeAdminShow('查看文章','./show.html',600,400)" href="javascript:;">
 				<i class="layui-icon">&#xe63c;</i>
 			</a>
-			<a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
+			<a title="删除" onclick="member_del(this,'{{d.userid}}')" href="javascript:;">
 				<i class="layui-icon">&#xe640;</i>
 			</a>
 		</script>
+		<script src="list.js" type="text/javascript" charset="utf-8"></script>
 		<script>
-            layui.extend({
-                admin: '/static/js/admin'
-            });
-            layui.use(['table', 'jquery','form', 'admin'], function() {
-                var table = layui.table,
-                    $ = layui.jquery,
-                    form = layui.form,
-                    admin = layui.admin;
-                table.render({
-                    elem: '#memberList',
-                    url: "/member/getAll",
-                    cellMinWidth: 80,
-                    cols: [
-                        [{
-                            type: 'checkbox'
-                        }, {
-                            field: 'userid', title: 'ID', sort: true
-                        }, {
-                            field: 'username', title: '用户名', templet: '#usernameTpl'
-                        }, {
-                            field: 'sex', title: '性别', sort: true
-                        }, {
-                            field: 'phone', title: '手机', sort: true
-                        }, {
-                            field: 'email', title: '邮箱', sort: true
-                        }, {
-                            field: 'address', title: '地址', sort: true
-                        }, {
-                            field: 'status', title: '状态', templet: '#recommendTpl', unresize: true
-                        },{
-                            field: 'operate', title: '操作', toolbar: '#operateTpl', unresize: true
-                        }]
-                    ],
-                    event: true,
-                    page: true
-                });
-                $(function(){
-                    form.render();
-                });
-            })
+            // layui.extend({
+            //     admin: '/static/js/admin'
+            // });
+
 		</script>
 	</body>
 
